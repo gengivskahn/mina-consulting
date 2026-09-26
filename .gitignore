@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Local source profile contains personal contact details; do not publish.
+/MINA_Company_Profile_FINAL_with_UAE_ME_Africa_Back_260822_150203.pdf

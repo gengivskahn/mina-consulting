@@ -1,0 +1,27 @@
+---
+import { sitePath } from '../lib/paths';
+import '../styles/global.css';
+interface Props { title?: string; description?: string; }
+const { title = 'MINA | Consulting & Engineering', description = 'Dubai-based project management, engineering coordination and business development for oil and gas across the Middle East and Africa.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#172624" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href={sitePath('favicon.svg')} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="header wrap">
+      <a href={sitePath('')} class="brand" aria-label="MINA Consulting and Engineering home"><img class="brand-emblem" src={sitePath('images/mina-emblem.png')} width="64" height="80" alt="" /><span class="brand-wordmark"><span class="brand-name">MINA</span><span class="brand-sub">CONSULTING & ENGINEERING</span></span></a>
+      <nav aria-label="Main navigation"><a href={sitePath('#about')}>About</a><a href={sitePath('#expertise')}>Expertise</a><a href={sitePath('#region')}>Our reach</a><a class="nav-contact" href={sitePath('#contact')}>Get in touch <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="wrap footer"><div><a class="footer-brand" href={sitePath('')} aria-label="MINA Consulting and Engineering home"><img class="footer-emblem" src={sitePath('images/mina-emblem.png')} width="48" height="60" alt="" loading="lazy" /><span>MINA</span></a><p>Consulting and Engineering LLC-FZ<br />Dubai, United Arab Emirates</p></div><div class="footer-right"><p>© {new Date().getFullYear()} MINA. All rights reserved.</p><div><a href={sitePath('privacy/')}>Privacy & cookies</a><a href={sitePath('legal/')}>Legal notice</a></div></div></footer>
+  </body>
+</html>
